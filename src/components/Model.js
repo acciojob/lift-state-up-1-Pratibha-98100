@@ -1,55 +1,13 @@
-import React, { Component } from 'react'
+import React from "react"
 
-class Model extends Component{
-
-  constructor(props){
-    super(props);
-    this.state = {
-      showModel: false
-    }
-  }
-
-
-  
-  handleButtonClick = () => {
-    this.setState({
-      showModal: true
-    });
-  };
-
-
-
-    render() {
-      return (
-        <div className='parent'>
-            <h2>Parent Component</h2>
-            <Child showModel= {this.state.showModel} onButtonClick={this.handleButtonClick}/>
-        </div>
-      );
-    }
-
+const Model = () => {
+  return (
+    <div>
+      <h3>Modal Content</h3>
+      <p>This is the modal content.</p>
+    </div>
+  )
 }
 
 
-class Child extends Component {
-
-  render() {
-    return (
-      <div className='child'>
-          <h2>Child Component</h2>
-  
-              <button onClick={this.props.onButtonClick}>Show Model</button> 
-
-              {
-                this.props.showModal && 
-                  <div>
-                    <h3>Modal Content</h3>
-                    <p>This is the modal content.</p>
-                    </div>
-              }
-        
-      </div>
-    )
-  }
-}  
-export default Model
+export default Model;
